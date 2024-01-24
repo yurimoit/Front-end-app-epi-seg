@@ -51,6 +51,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1ps solid #fff;
 
     background-color: rgba(0, 0, 0, 0.811);
 
