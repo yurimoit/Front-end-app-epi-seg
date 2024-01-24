@@ -61,7 +61,7 @@
 
 .main-windows {
     width: 100%;
-    height: 93%;
+    height: 94%;
 
     display: flex;
     align-items: flex-start;
@@ -89,9 +89,9 @@
     flex-direction: column;
     text-decoration: none;
 
-    gap: 2px;
+    gap: 10px;
 
-    padding: 5px;
+    padding: 10px;
 }
 
 .nav-list ul li {
@@ -101,7 +101,7 @@
     display: flex;
     align-items: center;
 
-    font-size: 20px;
+    font-size: 24px;
     color: rgb(228, 218, 23);
     font-family: Nunito, sans-serif;
     font-weight: 600;
@@ -121,7 +121,7 @@
 
 .windows-footer {
     width: 100%;
-    height: 6%;
+    height: 8%;
 
     display: flex;
     align-items: center;
@@ -135,7 +135,7 @@
 
 .windows-footer div {
     width: 22%;
-    height: 70%;
+    height: 65%;
 
     display: flex;
     align-items: center;
@@ -150,7 +150,7 @@
 }
 
 .windows-footer div h1 {
-    font-size: 16px;
+    font-size: 14px;
     color: rgb(228, 218, 23);
     font-weight: 800;
     font-family: Nunito, sans-serif;
@@ -173,7 +173,7 @@
 }
 
 .windows-footer button:hover {
-    opacity: 1.9;
+    background-color: rgba(228, 218, 23, 0.211);
 }
 
 
