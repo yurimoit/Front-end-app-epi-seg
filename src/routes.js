@@ -17,7 +17,7 @@ export default function Rotas() {
 
     return (
         <Routes>
-            <Route path='/' element={<Login />} />
+            <Route path='/' element={<Home />} />
             <Route path='/cadastrar' element={<Register />} />
             <Route element={<ProtectedRoutes redirectTo="/" />}>
                 <Route path='/home' element={<Home />} />
