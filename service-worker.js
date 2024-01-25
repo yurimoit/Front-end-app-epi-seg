@@ -1,8 +1,8 @@
 const cacheName = 'my-pwa-cache-v1';
 const filesToCache = [
     '/',
-    '/index.html',
-    '/path/to/other/assets',
+    './public/index.html',
+    './src/assets',
     // Adicione todos os arquivos que você deseja armazenar em cache
 ];
 
