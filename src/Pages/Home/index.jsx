@@ -2,9 +2,21 @@ import './styles.css';
 import Header from '../../components/Header/index';
 import ModalWindows from '../../components/ModalWindows';
 import { useState } from 'react';
+import ModalQuiz from '../../components/MoldalQuiz';
 
 function Home() {
   const [statusButtonMW, setStatusButtonMW] = useState(false)
+  const [statusQuiz, setStatusQuiz] = useState(false)
+
+  function abrirModal(n) {
+    if (n === 1) {
+
+    } else if (n === 2) {
+
+    } else if (n === 3) {
+      setStatusQuiz(true)
+    }
+  }
 
 
   if ('serviceWorker' in navigator) {
@@ -31,9 +43,13 @@ function Home() {
           <nav className='nav-pages'>
             <button>Connect</button>
             <button>Info</button>
-            <button>Quiz</button>
+            <button style={{ backgroundColor: `${statusQuiz ? 'rgb(153, 146, 11)' : ''}`, color: `${statusQuiz ? 'black' : ''}` }} onClick={() => abrirModal(3)}>Quiz</button>
           </nav>
         </div>
+
+        {statusQuiz &&
+          <ModalQuiz />
+        }
       </main>
 
       {statusButtonMW &&
