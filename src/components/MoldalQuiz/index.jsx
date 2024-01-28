@@ -274,7 +274,7 @@ export default function ModalQuiz() {
                     <div>
                         <h1>Quiz</h1>
                         <button onClick={() => setIniciaPergunta(true)}>inicia</button>
-                        <h2>10 perguntas</h2>
+                        <h2>9 perguntas</h2>
                     </div>
                 </div>
             )}

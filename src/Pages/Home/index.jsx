@@ -3,18 +3,25 @@ import Header from '../../components/Header/index';
 import ModalWindows from '../../components/ModalWindows';
 import { useState } from 'react';
 import ModalQuiz from '../../components/MoldalQuiz';
+import ModalInfo from '../../components/ModalInfo';
 
 function Home() {
   const [statusButtonMW, setStatusButtonMW] = useState(false)
+  const [textLogo, setTextLogo] = useState('A importância da segurança do trabalho.')
   const [statusQuiz, setStatusQuiz] = useState(false)
+  const [statusInfo, setStatusInfo] = useState(true)
 
   function abrirModal(n) {
     if (n === 1) {
 
     } else if (n === 2) {
-
+      setTextLogo('A importância da segurança do trabalho.')
+      setStatusInfo(true)
+      setStatusQuiz(false)
     } else if (n === 3) {
+      setTextLogo('Teste suas habilidades agora!')
       setStatusQuiz(true)
+      setStatusInfo(false)
     }
   }
 
@@ -40,12 +47,19 @@ function Home() {
       />
       <main onClick={() => setStatusButtonMW(false)}>
         <div className='main-header'>
-          <nav className='nav-pages'>
-            <button>Connect</button>
-            <button>Info</button>
-            <button style={{ background: `${statusQuiz ? 'linear-gradient(to top, rgb(0, 0, 0), rgb(46, 46, 12))' : ''}`, color: `${statusQuiz ? '#fff' : ''}` }} onClick={() => abrirModal(3)}>Quiz</button>
-          </nav>
+          <div>
+            <h1>{textLogo}</h1>
+            <nav className='nav-pages'>
+              <button>Connect</button>
+              <button style={{ background: `${!statusQuiz ? 'linear-gradient(to top, rgb(0, 0, 0), rgb(46, 46, 12))' : ''}`, color: `${!statusQuiz ? '#fff' : ''}` }} onClick={() => abrirModal(2)}>Info</button>
+              <button style={{ background: `${statusQuiz ? 'linear-gradient(to top, rgb(0, 0, 0), rgb(46, 46, 12))' : ''}`, color: `${statusQuiz ? '#fff' : ''}` }} onClick={() => abrirModal(3)}>Quiz</button>
+            </nav>
+          </div>
         </div>
+
+        {statusInfo &&
+          <ModalInfo />
+        }
 
         {statusQuiz &&
           <ModalQuiz />
