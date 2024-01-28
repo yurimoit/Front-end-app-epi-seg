@@ -43,7 +43,7 @@ function Home() {
           <nav className='nav-pages'>
             <button>Connect</button>
             <button>Info</button>
-            <button style={{ backgroundColor: `${statusQuiz ? 'rgb(153, 146, 11)' : ''}`, color: `${statusQuiz ? 'black' : ''}` }} onClick={() => abrirModal(3)}>Quiz</button>
+            <button style={{ background: `${statusQuiz ? 'linear-gradient(to top, rgb(0, 0, 0), rgb(46, 46, 12))' : ''}`, color: `${statusQuiz ? '#fff' : ''}` }} onClick={() => abrirModal(3)}>Quiz</button>
           </nav>
         </div>
 

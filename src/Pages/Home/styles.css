@@ -52,7 +52,7 @@ main {
     align-items: center;
     justify-content: center;
 
-    border: 0.5px solid #ffffff7a;
+    border: none;
     background-color: rgba(0, 0, 0, 0.811);
 
     font-size: 22px;
