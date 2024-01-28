@@ -201,7 +201,7 @@
 
     border-radius: 15px;
 
-    background-color: black;
+    background: linear-gradient(to top, rgb(0, 0, 0), rgb(46, 46, 12));
     box-shadow: 2px 4px 4px 1px rgb(174, 166, 15);
 
     color: rgb(228, 218, 23);
