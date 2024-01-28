@@ -40,7 +40,7 @@ export default function ModalQuiz() {
         primeira_r: 'Órgão do trabalhador',
         segunda_r: 'Pelo SESMT ou órgão fiscalizadores',
         terceira_r: 'Pela empresa',
-        quarta_r: 'Pela empresa',
+        quarta_r: 'Pelo IMST',
         resposta: 2
     },
     {
