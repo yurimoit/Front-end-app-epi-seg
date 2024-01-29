@@ -5,6 +5,7 @@ import { useState } from 'react';
 import ModalQuiz from '../../components/MoldalQuiz';
 import ModalInfo from '../../components/ModalInfo';
 import ModalConnectar from '../../components/ModalConnectar';
+import Footer from '../../components/Footer';
 
 function Home() {
   const [statusButtonMW, setStatusButtonMW] = useState(false)
@@ -57,9 +58,9 @@ function Home() {
           <div>
             <h1>{textLogo}</h1>
             <nav className='nav-pages'>
-              <button style={{ background: `${statusConnect ? 'linear-gradient(to top, rgb(0, 0, 0), rgb(46, 46, 12))' : ''}`, color: `${statusConnect ? '#fff' : ''}` }} onClick={() => abrirModal(1)}>Connect</button>
-              <button style={{ background: `${statusInfo ? 'linear-gradient(to top, rgb(0, 0, 0), rgb(46, 46, 12))' : ''}`, color: `${statusInfo ? '#fff' : ''}` }} onClick={() => abrirModal(2)}>Info</button>
-              <button style={{ background: `${statusQuiz ? 'linear-gradient(to top, rgb(0, 0, 0), rgb(46, 46, 12))' : ''}`, color: `${statusQuiz ? '#fff' : ''}` }} onClick={() => abrirModal(3)}>Quiz</button>
+              <button style={{ background: `${statusConnect ? '#ffffff73' : ''}`, color: `${statusConnect ? 'black' : ''}` }} onClick={() => abrirModal(1)}>Connect</button>
+              <button style={{ background: `${statusInfo ? '#ffffff73' : ''}`, color: `${statusInfo ? 'black' : ''}` }} onClick={() => abrirModal(2)}>Info</button>
+              <button style={{ background: `${statusQuiz ? '#ffffff73' : ''}`, color: `${statusQuiz ? 'black' : ''}` }} onClick={() => abrirModal(3)}>Quiz</button>
             </nav>
           </div>
         </div>
@@ -79,6 +80,8 @@ function Home() {
         <ModalWindows
           setStatusButtonMW={setStatusButtonMW}
         />}
+
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,53 @@
+.div-footer {
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 0;
+
+    /* background: linear-gradient(to right, #000000, #8B4513); */
+    background-color: black;
+
+
+}
+
+
+
+.div-footer-p {
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(17, 167, 55); */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content {
+    width: 75%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.icon-redes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.div-footer-p p {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: white;
+}

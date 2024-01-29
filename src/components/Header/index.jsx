@@ -7,7 +7,7 @@ export default function Header({ setStatusButtonMW }) {
         <header className='header'>
             <button onClick={() => setStatusButtonMW(true)}>
                 <MenuIcon sx={{
-                    color: 'rgb(228, 218, 23)', width: '90%', height: '90%',
+                    color: '#d3d3d3', width: '90%', height: '90%',
                     ':hover': {
                         color: 'black'
                     }

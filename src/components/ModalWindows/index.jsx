@@ -9,7 +9,7 @@ export default function ModalWindows({ setStatusButtonMW }) {
             <header className='modal-header'>
                 <button onClick={() => setStatusButtonMW(false)}>
                     <ArrowBackIcon sx={{
-                        color: 'rgb(228, 218, 23)', width: '80%', height: '80%',
+                        color: '#d3d3d3', width: '80%', height: '80%',
                         ':hover': {
                             color: 'black'
                         }
@@ -36,7 +36,7 @@ export default function ModalWindows({ setStatusButtonMW }) {
                     <button>
                         <h1>Logout</h1>
                         <LogoutIcon sx={{
-                            color: 'rgb(228, 218, 23)', width: '28px', height: '28px'
+                            color: '#d3d3d3', width: '28px', height: '28px'
                         }} />
                     </button>
                 </footer>

@@ -37,7 +37,7 @@
 }
 
 .modal-header button:hover {
-    background-color: rgba(228, 218, 23, 0.92);
+    background-color: #d3d3d3;
 }
 
 .modal-header div {
@@ -114,7 +114,7 @@
 
 .nav-list ul li:hover {
     color: black;
-    background-color: rgba(228, 218, 23, 0.92);
+    background-color: lightgray;
     border-color: #fff;
     padding: 5px;
 }
@@ -144,14 +144,14 @@
     padding: 10px;
 
     background-color: black;
-    border: 2px solid rgb(228, 218, 23);
+    border: 2px solid lightgray;
 
     border-radius: 50%;
 }
 
 .windows-footer div h1 {
     font-size: 14px;
-    color: rgb(228, 218, 23);
+    color: lightgray;
     font-weight: 800;
     font-family: Nunito, sans-serif;
 }
@@ -173,14 +173,14 @@
 }
 
 .windows-footer button:hover {
-    background-color: rgba(228, 218, 23, 0.211);
+    background-color: rgba(211, 211, 211, 0.668);
 }
 
 
 
 .windows-footer button h1 {
     font-size: 20px;
-    color: rgb(228, 218, 23);
+    color: #fff;
     font-weight: 800;
     font-family: Nunito, sans-serif;
 }

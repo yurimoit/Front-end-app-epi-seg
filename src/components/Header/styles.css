@@ -8,7 +8,7 @@
 
     padding-top: 2px;
 
-    background: linear-gradient(to top, rgb(0, 0, 0), rgb(38, 38, 10));
+    background: black;
 }
 
 .header button {
@@ -24,7 +24,7 @@
 }
 
 .header button:hover {
-    background-color: rgba(228, 218, 23, 0.92);
+    background-color: lightgray;
 }
 
 
