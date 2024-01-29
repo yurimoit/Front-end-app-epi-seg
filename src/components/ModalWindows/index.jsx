@@ -24,9 +24,9 @@ export default function ModalWindows({ setStatusButtonMW }) {
             <main className='main-windows'>
                 <nav className='nav-list'>
                     <ul>
-                        <li>Connect</li>
-                        <li>Info</li>
-                        <li>Quiz</li>
+                        <li>CONNECT</li>
+                        <li>INFO</li>
+                        <li>QUIZ</li>
                     </ul>
                 </nav>
                 <footer className='windows-footer'>
