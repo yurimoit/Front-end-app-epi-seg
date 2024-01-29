@@ -6,7 +6,9 @@
     align-items: center;
     justify-content: space-between;
 
-    background-color: black;
+    padding-top: 2px;
+
+    background: linear-gradient(to top, rgb(0, 0, 0), rgb(38, 38, 10));
 }
 
 .header button {
@@ -38,7 +40,7 @@
 
 .header div h1 {
     font-size: 32px;
-    color: rgb(228, 218, 23);
+    color: #fff;
     font-family: Nunito, sans-serif;
     font-weight: 600;
 }
