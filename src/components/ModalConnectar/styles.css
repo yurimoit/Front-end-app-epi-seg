@@ -8,7 +8,9 @@
     flex-direction: column;
 
 
-    padding-top: 20px;
+    margin-top: 1px;
+
+    border-top: 5px solid black;
 }
 
 .connect-div {
@@ -20,8 +22,6 @@
     justify-content: space-between;
     flex-direction: column;
 
-    border-radius: 7px;
-    background-color: lightgray;
 
     padding: 10px;
 }
@@ -72,14 +72,14 @@
 
 .connect-form div {
     width: 95%;
-    height: 82%;
+    height: 100%;
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 
-    gap: 20px;
+    gap: 15px;
 
     padding: 13px;
 
@@ -87,32 +87,34 @@
     border-radius: 10px;
 }
 
-.connect-form form {
+.connect-form div form {
     width: 95%;
-    height: 75%;
+    height: 90%;
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 
-    gap: 10px;
+
+    gap: 5px;
 
 }
 
 .connect-input {
     width: 100%;
-    height: 100px;
+    height: 60px;
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 
     gap: 5px;
 }
 
-.connect-input label {
+.title-label {
     width: 100%;
     height: 25px;
 
@@ -142,6 +144,26 @@
 
 }
 
+#btn-v {
+    align-self: flex-end;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: none;
+
+}
+
+.button-v {
+    align-self: flex-end;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: none;
+
+}
+
 .connect-input input::placeholder {
     font-size: 14px;
     color: black;
@@ -157,9 +179,9 @@
     outline: none;
 }
 
-.connect-form button {
+.button-confirm {
     width: 42%;
-    height: 37px;
+    height: 50px;
 
     display: flex;
     align-items: center;
@@ -175,6 +197,15 @@
     color: #fff;
 }
 
-.connect-form button:hover {
+.button-confirm:hover {
     background-color: rgb(27, 174, 27);
+}
+
+.mensagem-error {
+    color: rgb(120, 10, 10);
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
 }

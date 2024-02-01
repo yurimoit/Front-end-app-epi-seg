@@ -7,8 +7,7 @@ import ModalInfo from '../../components/ModalInfo';
 import ModalConnectar from '../../components/ModalConnectar';
 import Footer from '../../components/Footer';
 
-function Home() {
-  const [statusButtonMW, setStatusButtonMW] = useState(false)
+function Home({ statusButtonMW, setStatusButtonMW }) {
   const [textLogo, setTextLogo] = useState('A importância da segurança do trabalho.')
   const [statusQuiz, setStatusQuiz] = useState(false)
   const [statusInfo, setStatusInfo] = useState(true)

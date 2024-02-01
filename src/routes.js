@@ -1,7 +1,7 @@
 import { Route, Routes, Outlet, Navigate } from 'react-router-dom';
 import Home from './Pages/Home/index';
-// import Login from './Pages/Login';
-import Register from './Pages/Register';
+import PageHome from './components/PageHome';
+import { useState } from 'react';
 
 
 
@@ -13,14 +13,13 @@ function ProtectedRoutes({ redirectTo }) {
 }
 
 export default function Rotas() {
-
+    const [statusButtonMW, setStatusButtonMW] = useState(false)
 
     return (
         <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/cadastrar' element={<Register />} />
+            <Route path='/' element={<Home statusButtonMW={statusButtonMW} setStatusButtonMW={setStatusButtonMW} />} />
             <Route element={<ProtectedRoutes redirectTo="/" />}>
-                <Route path='/home' element={<Home />} />
+                <Route path='/home' element={<PageHome statusButtonMW={statusButtonMW} setStatusButtonMW={setStatusButtonMW} />} />
             </Route>
         </Routes>
     );
