@@ -1,17 +1,15 @@
-.modal-cadastra-funcionario {
+.modal-editar {
     width: 100%;
     height: 100%;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 
-
-.borda--cadastra-funcionario {
-    height: 500px;
+.borda-usuario-editar {
+    height: 600px;
     width: 350px !important;
 
     display: flex;
@@ -26,7 +24,7 @@
 
 }
 
-.modal-content-cadastra-funcionario {
+.modal-content-cliente-cc {
     height: 100%;
     width: 100%;
 
@@ -92,7 +90,7 @@
 
 
 
-.input-modal-cadastra-funcionario {
+.input-modal-funcionario {
     width: 100%;
     height: 90%;
 
@@ -102,10 +100,11 @@
     flex-direction: column;
     gap: 10px;
 
+    /* background-color: aqua; */
 
 }
 
-.input-section-cadastra-funcionario {
+.input-section-funcionario {
     width: 100%;
     height: 30%;
 
@@ -118,7 +117,7 @@
 
 }
 
-.input-section-cadastra-funcionario label {
+.input-section-funcionario label {
     color: #344054;
     font-family: Salsa, sans-serif;
     font-size: 14px;
@@ -130,7 +129,7 @@
 }
 
 
-.input-section-cadastra-funcionario input {
+.input-section-funcionario input {
     width: 100%;
     height: 35px;
 
@@ -139,14 +138,14 @@
     border: 0.8px solid rgba(123, 121, 121, 0.652);
 }
 
-.input-section-cadastra-funcionario input:focus {
+.input-section-funcionario input:focus {
     border-color: #DA0175 !important;
     outline: none;
 }
 
-.cpf-telefone-cadastrar-funcionario {
+.cpf-telefone-editar-funcionario {
     width: 100%;
-    height: 55%;
+    height: 30%;
 
     display: flex;
     align-items: flex-start;
@@ -154,10 +153,21 @@
     flex-direction: column;
 
 
+}
+
+
+.section-usuario-senhas {
+    width: 100%;
+    height: 30%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
 
 }
 
-.cpf-telefone-cadastrar-funcionario label {
+.cpf-telefone-editar-funcionario label {
     color: #344054;
     font-family: Salsa, sans-serif;
     font-size: 14px;
@@ -169,75 +179,62 @@
 }
 
 
-
-#cpf,
-#telefone {
+.connect-input-usuario-editar {
     width: 100%;
-    height: 35px !important;
-
-    border-radius: 3px;
-    padding-left: 4px;
-    border: 0.8px solid rgba(123, 121, 121, 0.652);
-}
-
-#cpf:focus {
-    border-color: #DA0175 !important;
-    outline: none;
-}
-
-#telefone:focus {
-    border-color: #DA0175 !important;
-    outline: none;
-}
-
-.input-section input:focus {
-    border-color: #DA0175 !important;
-    outline: none;
-}
-
-.b-categorias-cadastra-funcionario {
-    width: 100%;
-    height: 60px !important;
-
-    border-radius: 3px;
-    border: 0.8px solid rgba(123, 121, 121, 0.652);
-}
-
-.b-categorias-cadastra-funcionario:focus {
-    border-color: #DA0175 !important;
-    outline: none;
-}
-
-
-.b-categorias-cadastra-funcionario option {
-    width: 100%;
-    height: 65%;
+    height: 60px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    position: relative;
 
-    border-bottom: 2px solid gray;
+    gap: 5px;
+}
 
+.title-label-usuario-editar {
+    width: 100%;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-size: 14px;
     color: #344054;
     font-family: Salsa, sans-serif;
-    font-size: 14px;
-    font-style: normal;
     font-weight: 600;
-    line-height: 20px;
+
+}
+
+.connect-input-usuario-editar input {
+    width: 100%;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    border: 0.8px solid rgba(123, 121, 121, 0.652);
+    border-radius: 3px;
+
+    padding-left: 5px;
+
+}
+
+.button-v {
+    align-self: flex-end;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: none;
+
 }
 
 
 
-.b-categorias option:checked {
-    background-color: #4b9f17;
-    border-color: #fff;
-    /* Cor de fundo para opção selecionada */
-    font-weight: bold;
-    /* Estilo de texto para opção selecionada */
-}
-
-.bnts-cliente-cadastra-funcionario {
+.bnts-cliente {
     width: 100%;
     height: 15%;
 
@@ -247,11 +244,9 @@
     gap: 24px;
 
     /* background-color: #0E8750; */
-
-
 }
 
-.bnts-cliente-cadastra-funcionario button {
+.bnts-cliente button {
     width: 160px;
     height: 35px;
 

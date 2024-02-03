@@ -1,11 +1,10 @@
-
 import "./styles.css";
 import Modal from '@mui/material/Modal';
 import toast from 'react-hot-toast';
 import api from "../../services/api";
 
 
-export default function ModalExcluir({ abrirModalExcluir, setAbrirModalExcluir, setFinalizarCDCliente }) {
+export default function ModalExcluir({ abrirModalExcluir, setAbrirModalExcluir, id, nomeFuncionario }) {
 
 
 
@@ -13,26 +12,26 @@ export default function ModalExcluir({ abrirModalExcluir, setAbrirModalExcluir, 
 
         try {
 
-            const response = await api.post('/cadastrar/cliente', {
-
-            }, {
+            const response = await api.delete(`/excluir/funcionario/${id}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }
             });
 
-            console.log(response);
+            if (response.data) {
+                console.log(response);
+                toast.success(response.data.mensagem)
+            }
+
             setAbrirModalExcluir(false)
-            setFinalizarCDCliente(true);
 
         } catch (error) {
-            if (error.response.data.mensagem) {
+            if (error.response) {
                 toast.error(error.response.data.mensagem);
             }
             return;
         }
     }
-
 
 
     return (
@@ -44,7 +43,7 @@ export default function ModalExcluir({ abrirModalExcluir, setAbrirModalExcluir, 
                 className="modal-excluir"
             >
                 <div className="borda-excluir" >
-                    <h1>Deseja excluir permanentemente</h1>
+                    <h1>Deseja excluir permanentemente <span>{nomeFuncionario}</span>?</h1>
                     <div className="borda-excluir-button">
                         <button onClick={() => setAbrirModalExcluir(false)} style={{ backgroundColor: 'blue' }}>Não</button>
                         <button onClick={() => excluirItem()} style={{ backgroundColor: 'red' }}>Sim</button>

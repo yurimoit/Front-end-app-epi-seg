@@ -8,7 +8,7 @@
 }
 
 
-.borda-cliente-cc {
+.borda-editar-cadastro-funcionario {
     height: 500px;
     width: 350px !important;
 
@@ -24,7 +24,7 @@
 
 }
 
-.modal-content-cliente-cc {
+.modal-content-editar-cadastro-funcionario {
     height: 100%;
     width: 100%;
 
@@ -33,10 +33,9 @@
     justify-content: flex-start;
     flex-direction: column;
 
-
 }
 
-.titulo-funcionario {
+.titulo-funcionario-editar-cadastro-funcionario {
     width: 100%;
     height: 10%;
 
@@ -48,7 +47,7 @@
 }
 
 
-.titulo-funcionario section {
+.titulo-funcionario-editar-cadastro-funcionario section {
     width: 100%;
     height: 100%;
 
@@ -61,7 +60,7 @@
 
 
 
-.titulo-funcionario button {
+.titulo-funcionario-editar-cadastro-funcionario button {
     width: 35px;
     height: 40px;
     margin-bottom: 10px;
@@ -69,13 +68,13 @@
     border: none;
 }
 
-.titulo-funcionario section img {
+.titulo-funcionario-editar-cadastro-funcionario section img {
     width: 35px;
     height: 40px;
 
 }
 
-.titulo-funcionario section h1 {
+.titulo-funcionario-editar-cadastro-funcionario section h1 {
     color: black;
     font-family: Salsa, sans-serif;
     font-size: 22px;
@@ -90,7 +89,7 @@
 
 
 
-.input-modal-funcionario {
+.input-modal-editar-cadastro-funcionario {
     width: 100%;
     height: 90%;
 
@@ -100,11 +99,10 @@
     flex-direction: column;
     gap: 10px;
 
-    /* background-color: aqua; */
 
 }
 
-.input-section-funcionario {
+.input-section-editar-cadastro-funcionario {
     width: 100%;
     height: 30%;
 
@@ -113,11 +111,10 @@
     justify-content: flex-start;
     flex-direction: column;
 
-    /* background-color: orange; */
 
 }
 
-.input-section-funcionario label {
+.input-section-editar-cadastro-funcionario label {
     color: #344054;
     font-family: Salsa, sans-serif;
     font-size: 14px;
@@ -129,7 +126,7 @@
 }
 
 
-.input-section-funcionario input {
+.input-section-editar-cadastro-funcionario input {
     width: 100%;
     height: 35px;
 
@@ -138,12 +135,12 @@
     border: 0.8px solid rgba(123, 121, 121, 0.652);
 }
 
-.input-section-funcionario input:focus {
+.input-section-editar-cadastro-funcionario input:focus {
     border-color: #DA0175 !important;
     outline: none;
 }
 
-.cpf-telefone-cliente {
+.cpf-telefone-editar-cadastro-funcionario {
     width: 100%;
     height: 55%;
 
@@ -152,11 +149,10 @@
     justify-content: flex-start;
     flex-direction: column;
 
-    /* background-color: olive; */
 
 }
 
-.cpf-telefone-cliente label {
+.cpf-telefone-editar-cadastro-funcionario label {
     color: #344054;
     font-family: Salsa, sans-serif;
     font-size: 14px;
@@ -287,47 +283,4 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
-
-.titulo-CadastrarCliente-y {
-    width: 100%;
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-
-    margin-bottom: 15px;
-}
-
-.titulo-CadastrarCliente-y h1 {
-    color: #343447;
-    text-align: center;
-    font-family: Montserrat, sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 130%;
-
-    white-space: nowrap;
-
-    margin-left: 5px;
-}
-
-.titulo-CadastrarCliente-y button {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 10px;
-
-    margin-left: 85px;
-    border: none;
-
-
-
-}
-
-.titulo-CadastrarCliente-y img {
-    width: 36px;
-    height: 36px;
 }

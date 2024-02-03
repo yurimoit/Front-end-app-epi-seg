@@ -29,8 +29,17 @@
 }
 
 .borda-excluir h1 {
-    font-size: 24px;
+    font-size: 22px;
     color: black;
+    font-family: Salsa, sans-serif;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.borda-excluir h1 span {
+    font-size: 20px;
+    color: #DA0175;
     font-family: Salsa, sans-serif;
     font-weight: 800;
 

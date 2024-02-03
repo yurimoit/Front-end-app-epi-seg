@@ -1,9 +1,56 @@
 import './styles.css'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { useNavigate } from 'react-router-dom';
 
 
-export default function ModalWindows({ setStatusButtonMW }) {
+export default function ModalWindows({ setStatusButtonMW, setStatusConnect, setStatusInfo, setStatusQuiz }) {
+    const navigate = useNavigate();
+
+    function pageRegistro() {
+        if (localStorage.getItem('token')) {
+            navigate('/registro')
+        }
+    }
+
+    function homeLogin() {
+        if (!localStorage.getItem('token')) {
+            setStatusButtonMW(false)
+            navigate('/')
+            setStatusConnect(true)
+            setStatusInfo(false)
+            setStatusQuiz(false)
+        }
+    }
+
+    function irParaPageHome(n) {
+        if (n === 1) {
+            setStatusButtonMW(false)
+            navigate('/')
+            setStatusConnect(true)
+            setStatusInfo(false)
+            setStatusQuiz(false)
+        } else if (n === 2) {
+            setStatusButtonMW(false)
+            navigate('/')
+            setStatusConnect(false)
+            setStatusInfo(true)
+            setStatusQuiz(false)
+        } else if (n === 3) {
+            setStatusButtonMW(false)
+            navigate('/')
+            setStatusConnect(false)
+            setStatusInfo(false)
+            setStatusQuiz(true)
+        } else if (n === 4 && localStorage.getItem('token')) {
+            setStatusButtonMW(false)
+            navigate('/home')
+        } else if (n === 5 && localStorage.getItem('token')) {
+            setStatusButtonMW(false)
+            navigate('/registro')
+        }
+    }
+
     return (
         <div className='modal-windows'>
             <header className='modal-header'>
@@ -24,17 +71,21 @@ export default function ModalWindows({ setStatusButtonMW }) {
             <main className='main-windows'>
                 <nav className='nav-list'>
                     <ul>
-                        <li>CONNECT</li>
-                        <li>INFO</li>
-                        <li>QUIZ</li>
+                        <li onClick={() => irParaPageHome(1)}>CONNECT</li>
+                        <li onClick={() => irParaPageHome(2)}>INFO</li>
+                        <li onClick={() => irParaPageHome(3)}>QUIZ</li>
+                        {localStorage.getItem('token') && (<>
+                            <li onClick={() => irParaPageHome(4)}>Home</li>
+                            <li onClick={() => irParaPageHome(5)}>Perfil</li>
+                        </>)}
                     </ul>
                 </nav>
                 <footer className='windows-footer'>
-                    <div>
+                    <div onClick={() => pageRegistro()}>
                         <h1>YM</h1>
                     </div>
-                    <button>
-                        <h1>Logout</h1>
+                    <button onClick={() => homeLogin()}>
+                        <h1>{!localStorage.getItem('token') ? 'Entra' : 'Logout'}</h1>
                         <LogoutIcon sx={{
                             color: '#d3d3d3', width: '28px', height: '28px'
                         }} />

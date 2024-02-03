@@ -1,55 +1,38 @@
-
 import "./styles.css";
 import CloseIcon from '@mui/icons-material/Close';
 import Modal from '@mui/material/Modal';
-import { useState } from "react";
-import toast from 'react-hot-toast';
-import api from "../../services/api";
+import { useEffect, useState } from "react";
 import clienteDark from '../../assets/clienteDark.svg';
 
 
-export default function ModalDetalhar({ abrirModalDetalhar, setAbrirModalDetalhar, setFinalizarCDCliente }) {
+export default function ModalDetalhar({ abrirModalDetalhar, setAbrirModalDetalhar, lista, index }) {
 
 
     const [form, setForm] = useState({
-        nome: '',
-        cargo: '',
-        categoria: '',
-        cpf: '',
-        telefone: '',
+        nome: 'xxxx',
+        cargo: 'xxxx',
+        categoria: [''],
+        cpf: '00000000000',
+        telefone: '00000000000',
     })
 
-
-
-    setForm()
-
-
-
-    async function handleSubmit(e) {
-        e.preventDefault();
-
-        try {
-
-            const response = await api.post('/cadastrar/cliente', {
-            }, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
-                }
-            });
-
-            console.log(response);
-
-
-            setAbrirModalDetalhar(false)
-            setFinalizarCDCliente(true);
-
-        } catch (error) {
-            if (error.response.data.mensagem) {
-                toast.error(error.response.data.mensagem);
-            }
-            return;
-        }
+    function capitalize(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     }
+
+    useEffect(() => {
+        if (Array.isArray(lista) && index >= 0 && index < lista.length) {
+            setForm({
+                nome: lista[index].nome,
+                cargo: lista[index].cargo,
+                categoria: lista[index].categoria,
+                cpf: lista[index].cpf,
+                telefone: lista[index].telefone,
+            });
+        }
+    },
+        // eslint-disable-next-line 
+        [index])
 
 
 
@@ -62,66 +45,59 @@ export default function ModalDetalhar({ abrirModalDetalhar, setAbrirModalDetalha
                 className="modal-editar"
             >
                 <div className="borda-cliente-cc" >
-                    <div className="modal-content-cliente-cc">
+                    <div className="modal-funcionario-detalhar">
                         <div className="titulo-funcionario">
                             <section>
                                 <img src={clienteDark} alt='cliente-dark' />
-                                <h1>Editar cadastro</h1>
+                                <h1>Informações de cadastro</h1>
                             </section>
                             <button type="button" onClick={() => setAbrirModalDetalhar(false)}>
                                 <CloseIcon sx={{ width: '100%', height: '100%' }} />
                             </button>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="input-modal-funcionario"  >
-                            <section className="input-section-funcionario">
-                                <label>Nome e sobrenome*</label>
-                                <input
-                                    id="nome"
-                                    type="text"
-                                    name="nome"
-                                    value={form.nome}
+                        <form className="input-modal-detalhar"  >
+                            <section className="input-detalhar">
+                                <div className="input-detalhar-div">
+                                    <h1>Nome e sobrenome</h1>
+                                    <h2>{capitalize(form.nome)}</h2>
+                                </div>
 
-                                />
-                                <span style={{ marginBottom: '10px' }}></span>
+                                <div className="input-detalhar-div">
+                                    <h1>Cargo</h1>
+                                    <h2>{capitalize(form.cargo)}</h2>
+                                </div>
 
-                                <label>Cargo*</label>
-                                <input
-                                    id="cargo"
-                                    type="text"
-                                    name="cargo"
-                                    value={form.cargo}
+                                <div className="input-detalhar-div">
+                                    <h1>CPF</h1>
+                                    <h2>{form.cpf.slice(0, 3) +
+                                        "." +
+                                        form.cpf.slice(3, 6) +
+                                        "." +
+                                        form.cpf.slice(6, 9) +
+                                        "-" +
+                                        form.cpf.slice(9)}</h2>
+                                </div>
 
-                                />
+                                <div className="input-detalhar-div">
+                                    <h1>Telefone</h1>
+                                    <h2>{"(" +
+                                        form.telefone.slice(0, 2) +
+                                        ") " +
+                                        form.telefone.slice(2, 7) +
+                                        "-" +
+                                        form.telefone.slice(7)}</h2>
+                                </div>
                             </section>
 
 
                             <section className="cpf-telefone-cliente">
-
-                                <label>CPF*</label>
-                                <input
-                                    id="cpf"
-                                    name="cpf"
-                                    value={form.cpf}
-
-                                />
-                                <span style={{ marginBottom: '10px' }}></span>
-
-
-                                <label>Telefone*</label>
-                                <input
-                                    id="telefone"
-                                    name="telefone"
-                                    value={form.telefone}
-
-                                />
-                                <span style={{ marginBottom: '10px' }}></span>
-
-                                <label className='titulo-label'>Categorias de EPI:</label>
-
-                                <textarea></textarea>
-
-
+                                <h1>EPIs :</h1>
+                                {form.categoria.map((item, index) => (
+                                    <ul key={index}>
+                                        <li>{capitalize(item)}</li>
+                                    </ul>
+                                ))}
                             </section>
 
                         </form>

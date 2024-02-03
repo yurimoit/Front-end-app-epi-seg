@@ -17,7 +17,7 @@ export default function ModalConnectar() {
     const [statusVisibilidadeR, setStatusVisibilidadeR] = useState(false);
     const [statusVisibilidadeR2, setStatusVisibilidadeR2] = useState(false);
     const [statusVisibilidadeL, setStatusVisibilidadeL] = useState(false);
-    const [repetirSenha, setrepetirSenha] = useState('');
+    const [repetirSenha, setRepetirSenha] = useState('');
 
 
     const [form, setForm] = useState({
@@ -114,8 +114,10 @@ export default function ModalConnectar() {
                 const token = response.data.token;
                 localStorage.setItem('token', token);
 
-                const usuario = JSON.stringify(response.data.usuario);
-                localStorage.setItem('usuario', usuario);
+                console.log(response.data.usuario.nome);
+
+                // const usuario = JSON.stringify(response.data.usuario);
+                // localStorage.setItem('usuario', usuario);
 
             }
 
@@ -125,12 +127,15 @@ export default function ModalConnectar() {
 
 
         } catch (error) {
-            if (error.response.data.mensagem) {
+            if (error.response) {
                 toast.error(error.response.data.mensagem);
             }
+            console.log(error);
             return;
         }
     }
+
+
 
     return (
         <main className='connect'>
@@ -225,7 +230,7 @@ export default function ModalConnectar() {
                                             type={!statusVisibilidadeL ? 'password' : 'text'}
                                             placeholder="Digite sua senha"
                                             value={repetirSenha}
-                                            onChange={(e) => setrepetirSenha(e.target.value)}
+                                            onChange={(e) => setRepetirSenha(e.target.value)}
                                         />
                                         <button className='button-v' onClick={() => setStatusVisibilidadeL(!statusVisibilidadeL)} type='button'>
                                             {!statusVisibilidadeL ? <VisibilityOffOutlinedIcon sx={{ width: '20px', height: '20px', color: '#747488' }} /> : <RemoveRedEyeOutlinedIcon sx={{ width: '20px', height: '20px', color: '#747488' }} />}

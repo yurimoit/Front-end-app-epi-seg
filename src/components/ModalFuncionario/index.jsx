@@ -1,28 +1,3 @@
-// import './styles.css'
-// import Modal from "@mui/material/Modal";
-
-// export default function ModalFuncionarios() {
-//     return (
-//         <section className='modal-funcionario'>
-//             <Modal
-//                 open={true}
-//                 aria-labelledby="modal-modal-title"
-//                 aria-describedby="modal-modal-description"
-//                 className='modal-class'
-//             >
-//                 <div className='modal-funcionario-div'>
-//                     <div>
-
-//                     </div>
-//                     <div>
-
-//                     </div>
-//                 </div>
-//             </Modal>
-
-//         </section>
-//     )
-// }
 
 import "./styles.css";
 import CloseIcon from '@mui/icons-material/Close'
@@ -45,7 +20,6 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
     const [form, setForm] = useState({
         nome: '',
         cargo: '',
-        categoria: '',
         cpf: '',
         telefone: '',
     })
@@ -61,6 +35,7 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
             categorias: selectedOptions,
         });
     };
+
 
 
 
@@ -92,13 +67,13 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
                 return;
             }
 
-            if (!form.categoria.trim().includes(' ')) {
+            if (formCategoria.categorias.length < 1) {
                 document.getElementById('categoria').style.border = '1.5px solid red'
-                setErrorNome('Escolha uma opção de Categoria corretamente!');
+                setErrorCategoria('Escolha uma opção de Categoria corretamente!');
                 return;
             }
 
-            if (!form.cargo.trim().includes(' ')) {
+            if (!form.cargo.trim()) {
                 document.getElementById('cargo').style.border = '1.5px solid red'
                 setErrorCargo('Preencha o campo Cargo corretamente!');
                 return;
@@ -121,10 +96,12 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
 
 
 
-            const response = await api.post('/cadastrar/cliente', {
+            const response = await api.post('/cadastrar/funcionario', {
                 nome: form.nome,
+                cargo: form.cargo,
                 cpf: form.cpf.replace(/[^0-9]/g, ''),
                 telefone: form.telefone.replace(/[^0-9]/g, ''),
+                categoria: formCategoria.categorias
             }, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -139,17 +116,20 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
                 telefone: '',
             });
             setAbrirModalCadastro(false)
-            setFinalizarCDCliente(true);
+            if (response.data) {
+                toast.success(response.data.mensagem)
+            }
 
         } catch (error) {
-            if (error.response.data.mensagem) {
+            console.log(error);
+            if (error.response) {
                 toast.error(error.response.data.mensagem);
             }
             return;
         }
     }
 
-
+    console.log(formCategoria.categorias);
 
     return (
         <div>
@@ -157,10 +137,10 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
                 open={abrirModalCadastro}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
-                className="modal"
+                className="modal-cadastra-funcionario"
             >
-                <div className="borda-cliente-cc" >
-                    <div className="modal-content-cliente-cc">
+                <div className="borda--cadastra-funcionario" >
+                    <div className="modal-content-cadastra-funcionario">
                         <div className="titulo-funcionario">
                             <section>
                                 <img src={clienteDark} alt='cliente-dark' />
@@ -171,8 +151,8 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
                             </button>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="input-modal-funcionario"  >
-                            <section className="input-section-funcionario">
+                        <form onSubmit={handleSubmit} className="input-modal-cadastra-funcionario"  >
+                            <section className="input-section-cadastra-funcionario">
                                 <label>Nome e sobrenome*</label>
                                 <input
                                     id="nome"
@@ -199,7 +179,7 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
                             </section>
 
 
-                            <section className="cpf-telefone-cliente">
+                            <section className="cpf-telefone-cadastrar-funcionario">
 
                                 <label>CPF*</label>
                                 <IMaskInput
@@ -228,18 +208,20 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
 
                                 <label className='titulo-label'>Categorias de EPI:</label>
                                 <select
-                                    className='b-categorias'
+                                    id='categoria'
+                                    className='b-categorias-cadastra-funcionario'
                                     name="categorias"
                                     value={formCategoria.categorias}
                                     onChange={(e) => handleOnChange(e)}
                                     multiple
                                 >
-                                    <option value="8h">8h</option>
-                                    <option value="10h">10h</option>
-                                    <option value="11h">11h</option>
-                                    <option value="14h">14h</option>
-                                    <option value="15h">15h</option>
-                                    <option value="16h">16h</option>
+                                    <option value="Capacete">Capacete</option>
+                                    <option value="Luva">Luva</option>
+                                    <option value="Protetor Auricular">Protetor Auricular</option>
+                                    <option value="Bota">Bota</option>
+                                    <option value="Cinto de segurança">Cinto de segurança</option>
+                                    <option value="Óculos">Óculos</option>
+                                    <option value="Máscara">Máscara</option>
                                 </select>
 
                                 <span >{errorCategoria}</span>
@@ -247,7 +229,7 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
                             </section>
 
 
-                            <section className="bnts-cliente">
+                            <section className="bnts-cliente-cadastra-funcionario">
                                 <button type='button1' onClick={() => setAbrirModalCadastro(false)} className="btn-cancelar">
                                     Cancelar
                                 </button>

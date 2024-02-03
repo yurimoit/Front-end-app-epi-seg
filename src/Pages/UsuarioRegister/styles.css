@@ -1,0 +1,130 @@
+.register {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 2px;
+
+}
+
+.register-main {
+    width: 100%;
+    max-height: 90%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.registro-div {
+    width: 95%;
+    height: 70%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 20px 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+
+}
+
+.registro-title {
+    width: 100%;
+    height: 15%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registro-title h1 {
+    font-size: 26px;
+    font-family: Salsa, sans-serif;
+    font-weight: 600;
+    color: black;
+}
+
+.registro-informacoes {
+    width: 100%;
+    height: 60%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.input-informacoes {
+    width: 100%;
+    height: 15%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.input-informacoes h1 {
+    color: #344054;
+    font-family: Salsa, sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+
+}
+
+.input-informacoes h2 {
+    color: #DA0175;
+    font-family: Salsa, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+
+}
+
+.registro-buttons {
+    width: 100%;
+    height: 25%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.registro-buttons button {
+    width: 90%;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 4px 4px 2px black;
+
+
+    font-size: 22px;
+    font-family: Salsa, sans-serif;
+    font-weight: 600;
+    color: #fff;
+}
