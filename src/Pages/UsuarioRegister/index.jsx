@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 import ModalEditarUsuario from '../../components/ModalEditarUsuario';
 import ModalExcluirUsuario from '../../components/ModalExcluirUsuario';
 
-function UsuarioRegister({ statusButtonMW, setStatusButtonMW, statusConnect, setStatusConnect, statusInfo, setStatusInfo, statusQuiz, setStatusQuiz }) {
+function UsuarioRegister({ statusButtonMW, setStatusButtonMW, statusConnect, setStatusConnect, statusInfo, setStatusInfo, statusQuiz, setStatusQuiz, nomeUsuario, setNomeUsuario }) {
 
   const [abrirModalEditarUsuario, setAbrirModalEditarUsuario] = useState(false)
   const [abrirModalExcluirUsuario, setAbrirModalExcluirUsuario] = useState(false)
@@ -34,6 +34,7 @@ function UsuarioRegister({ statusButtonMW, setStatusButtonMW, statusConnect, set
       })
 
       if (response.data) {
+        setNomeUsuario(response.data.nome)
         console.log(response);
         setForm({
           nome: response.data.nome,
@@ -54,7 +55,9 @@ function UsuarioRegister({ statusButtonMW, setStatusButtonMW, statusConnect, set
 
   useEffect(() => {
     buscarDadosUsuario()
-  }, [abrirModalEditarUsuario])
+  },
+    // eslint-disable-next-line
+    [abrirModalEditarUsuario])
 
   return (
     <div className="register">
@@ -126,6 +129,7 @@ function UsuarioRegister({ statusButtonMW, setStatusButtonMW, statusConnect, set
           setStatusConnect={setStatusConnect}
           setStatusInfo={setStatusInfo}
           setStatusQuiz={setStatusQuiz}
+          nomeUsuario={nomeUsuario}
         />}
     </div>
   );

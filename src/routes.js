@@ -18,6 +18,8 @@ export default function Rotas() {
     const [statusInfo, setStatusInfo] = useState(true)
     const [statusConnect, setStatusConnect] = useState(false)
     const [statusButtonMW, setStatusButtonMW] = useState(false)
+    const [nomeUsuario, setNomeUsuario] = useState('')
+
     return (
         <Routes>
             <Route path='/' element={<Home
@@ -29,6 +31,8 @@ export default function Rotas() {
                 setStatusInfo={setStatusInfo}
                 statusQuiz={statusQuiz}
                 setStatusQuiz={setStatusQuiz}
+                nomeUsuario={nomeUsuario}
+                setNomeUsuario={setNomeUsuario}
             />} />
             <Route element={<ProtectedRoutes redirectTo="/" />}>
                 <Route path='/home' element={<PageHome
@@ -40,6 +44,8 @@ export default function Rotas() {
                     setStatusInfo={setStatusInfo}
                     statusQuiz={statusQuiz}
                     setStatusQuiz={setStatusQuiz}
+                    nomeUsuario={nomeUsuario}
+                    setNomeUsuario={setNomeUsuario}
                 />} />
                 <Route path='/registro' element={<UsuarioRegister
                     statusButtonMW={statusButtonMW}
@@ -50,6 +56,8 @@ export default function Rotas() {
                     setStatusInfo={setStatusInfo}
                     statusQuiz={statusQuiz}
                     setStatusQuiz={setStatusQuiz}
+                    nomeUsuario={nomeUsuario}
+                    setNomeUsuario={setNomeUsuario}
                 />} />
             </Route>
         </Routes>

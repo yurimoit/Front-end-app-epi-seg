@@ -34,7 +34,7 @@ export default function ModalExcluirUsuario({ abrirModalExcluirUsuario, setAbrir
             }
 
             setAbrirModalExcluirUsuario(false)
-            localStorage.delete('token')
+            localStorage.removeItem('token')
             navigate('/')
 
 

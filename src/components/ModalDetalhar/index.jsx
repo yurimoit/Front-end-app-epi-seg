@@ -2,7 +2,7 @@ import "./styles.css";
 import CloseIcon from '@mui/icons-material/Close';
 import Modal from '@mui/material/Modal';
 import { useEffect, useState } from "react";
-import clienteDark from '../../assets/clienteDark.svg';
+import PeopleIcon from '@mui/icons-material/People';
 
 
 export default function ModalDetalhar({ abrirModalDetalhar, setAbrirModalDetalhar, lista, index }) {
@@ -46,13 +46,13 @@ export default function ModalDetalhar({ abrirModalDetalhar, setAbrirModalDetalha
             >
                 <div className="borda-cliente-cc" >
                     <div className="modal-funcionario-detalhar">
-                        <div className="titulo-funcionario">
+                        <div className="titulo-funcionario-detalhar">
                             <section>
-                                <img src={clienteDark} alt='cliente-dark' />
+                                < PeopleIcon sx={{ width: '30px', height: '40px', color: '#fff' }} />
                                 <h1>Informações de cadastro</h1>
                             </section>
                             <button type="button" onClick={() => setAbrirModalDetalhar(false)}>
-                                <CloseIcon sx={{ width: '100%', height: '100%' }} />
+                                <CloseIcon sx={{ width: '100%', height: '100%', color: '#fff' }} />
                             </button>
                         </div>
 

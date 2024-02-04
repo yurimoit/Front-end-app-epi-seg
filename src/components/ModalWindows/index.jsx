@@ -1,11 +1,13 @@
 import './styles.css'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function ModalWindows({ setStatusButtonMW, setStatusConnect, setStatusInfo, setStatusQuiz }) {
+export default function ModalWindows({ setStatusButtonMW, setStatusConnect, setStatusInfo, setStatusQuiz, nomeUsuario }) {
     const navigate = useNavigate();
+    const [sigla, setSigla] = useState('')
 
     function pageRegistro() {
         if (localStorage.getItem('token')) {
@@ -20,6 +22,15 @@ export default function ModalWindows({ setStatusButtonMW, setStatusConnect, setS
             setStatusConnect(true)
             setStatusInfo(false)
             setStatusQuiz(false)
+        }
+        if (localStorage.getItem('token')) {
+            localStorage.removeItem('token')
+            navigate('/')
+            setStatusButtonMW(false)
+            setStatusConnect(true)
+            setStatusInfo(false)
+            setStatusQuiz(false)
+
         }
     }
 
@@ -50,6 +61,20 @@ export default function ModalWindows({ setStatusButtonMW, setStatusConnect, setS
             navigate('/registro')
         }
     }
+
+    function pegarSiglasNome() {
+        if (nomeUsuario) {
+            let array = nomeUsuario.toUpperCase().split(' ')
+            setSigla(array[0].slice(0, 1) + array[1].slice(0, 1))
+
+        }
+    }
+
+    useEffect(() => {
+        pegarSiglasNome()
+    },
+        // eslint-disable-next-line 
+        [nomeUsuario])
 
     return (
         <div className='modal-windows'>
@@ -82,7 +107,7 @@ export default function ModalWindows({ setStatusButtonMW, setStatusConnect, setS
                 </nav>
                 <footer className='windows-footer'>
                     <div onClick={() => pageRegistro()}>
-                        <h1>YM</h1>
+                        <h1>{localStorage.getItem('token') ? sigla : 'YM'}</h1>
                     </div>
                     <button onClick={() => homeLogin()}>
                         <h1>{!localStorage.getItem('token') ? 'Entra' : 'Logout'}</h1>

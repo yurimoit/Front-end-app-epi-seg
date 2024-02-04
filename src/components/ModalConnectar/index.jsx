@@ -6,7 +6,7 @@ import api from '../../services/api';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 
-export default function ModalConnectar() {
+export default function ModalConnectar({ setNomeUsuario }) {
     const [buttonStatus, setButtonStatus] = useState(true)
     const [buttonProsseguir, setButtonProsseguir] = useState(false)
     const navigate2 = useNavigate();
@@ -115,6 +115,7 @@ export default function ModalConnectar() {
                 localStorage.setItem('token', token);
 
                 console.log(response.data.usuario.nome);
+                setNomeUsuario(response.data.usuario.nome)
 
                 // const usuario = JSON.stringify(response.data.usuario);
                 // localStorage.setItem('usuario', usuario);

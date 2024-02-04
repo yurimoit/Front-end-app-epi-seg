@@ -12,7 +12,7 @@ import ModalEditar from '../ModalEditar';
 import ModalDetalhar from '../ModalDetalhar';
 import api from '../../services/api';
 
-export default function PageHome({ statusButtonMW, setStatusButtonMW, statusConnect, setStatusConnect, statusInfo, setStatusInfo, statusQuiz, setStatusQuiz }) {
+export default function PageHome({ statusButtonMW, setStatusButtonMW, statusConnect, setStatusConnect, statusInfo, setStatusInfo, statusQuiz, setStatusQuiz, nomeUsuario, setNomeUsuario }) {
     const [abrirModalCadastro, setAbrirModalCadastro] = useState(false)
     const [abrirModalExcluir, setAbrirModalExcluir] = useState(false)
     const [abrirModalEditar, setAbrirModalEditar] = useState(false)
@@ -166,6 +166,7 @@ export default function PageHome({ statusButtonMW, setStatusButtonMW, statusConn
                     setStatusConnect={setStatusConnect}
                     setStatusInfo={setStatusInfo}
                     setStatusQuiz={setStatusQuiz}
+                    nomeUsuario={nomeUsuario}
                 />}
 
             {abrirModalExcluir &&

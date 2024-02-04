@@ -7,7 +7,7 @@ import ModalInfo from '../../components/ModalInfo';
 import ModalConnectar from '../../components/ModalConnectar';
 import Footer from '../../components/Footer';
 
-function Home({ statusButtonMW, setStatusButtonMW, statusConnect, setStatusConnect, statusInfo, setStatusInfo, statusQuiz, setStatusQuiz }) {
+function Home({ statusButtonMW, setStatusButtonMW, statusConnect, setStatusConnect, statusInfo, setStatusInfo, statusQuiz, setStatusQuiz, nomeUsuario, setNomeUsuario }) {
   const [textLogo, setTextLogo] = useState('A importância da segurança do trabalho.')
 
   function abrirModal(n) {
@@ -62,6 +62,7 @@ function Home({ statusButtonMW, setStatusButtonMW, statusConnect, setStatusConne
         </div>
 
         {statusConnect && <ModalConnectar
+          setNomeUsuario={setNomeUsuario}
         />}
 
         {statusInfo &&
@@ -79,6 +80,7 @@ function Home({ statusButtonMW, setStatusButtonMW, statusConnect, setStatusConne
           setStatusConnect={setStatusConnect}
           setStatusInfo={setStatusInfo}
           setStatusQuiz={setStatusQuiz}
+          nomeUsuario={nomeUsuario}
         />}
 
       <Footer />
