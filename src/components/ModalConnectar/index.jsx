@@ -184,7 +184,7 @@ export default function ModalConnectar({ setNomeUsuario }) {
                             <div>
                                 <h1>Cadastrar</h1>
                                 <form>
-                                    <label className='title-label'>Nome</label>
+                                    <label className='title-label'>Nome e sobrenome</label>
                                     <section className='connect-input'>
                                         <input
                                             type='text'

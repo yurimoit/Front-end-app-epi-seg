@@ -66,8 +66,8 @@ function UsuarioRegister({ statusButtonMW, setStatusButtonMW, statusConnect, set
         setStatusButtonMW={setStatusButtonMW}
       />
 
-      <main onClick={() => setStatusButtonMW(false)} className='register-main'>
-        <div className='registro-div'>
+      <main onClick={() => setStatusButtonMW(false)} className='register-main-usuario'>
+        <div className='registro-div-usuario'>
           <section className='registro-title'>
             <h1>Informações cadastrais</h1>
           </section>
@@ -104,8 +104,8 @@ function UsuarioRegister({ statusButtonMW, setStatusButtonMW, statusConnect, set
             </div>
           </section>
           <section className='registro-buttons'>
-            <button onClick={() => setAbrirModalEditarUsuario(true)} style={{ backgroundColor: '#20ba20' }}>Editar informações</button>
-            <button onClick={() => setAbrirModalExcluirUsuario(true)} style={{ backgroundColor: 'red' }}>Excluir conta</button>
+            <button onClick={() => setAbrirModalEditarUsuario(true)} style={{ backgroundColor: '#095e09' }}>Editar informações</button>
+            <button onClick={() => setAbrirModalExcluirUsuario(true)} style={{ backgroundColor: '#790f0f' }}>Excluir conta</button>
           </section>
         </div>
       </main>

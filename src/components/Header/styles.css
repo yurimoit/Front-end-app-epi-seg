@@ -21,7 +21,7 @@
     justify-content: center;
 
     border: none;
-    background-color: #ffffff1d;
+    background-color: #ffffff00;
 }
 
 .header button:hover {
@@ -44,4 +44,23 @@
     color: #fff;
     font-family: Salsa, sans-serif;
     font-weight: 600;
+}
+
+@media screen and (min-width: 720px) {
+    .header {
+        width: 100%;
+        height: 70px;
+    }
+
+    .header button {
+        width: 60px;
+        height: 90%;
+    }
+
+    .header div h1 {
+        font-size: 38px;
+        color: #fff;
+        font-family: Salsa, sans-serif;
+        font-weight: 600;
+    }
 }

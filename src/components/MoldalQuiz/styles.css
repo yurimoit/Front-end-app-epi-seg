@@ -1,6 +1,6 @@
 .quiz {
     width: 100%;
-    height: 62.7vh;
+    height: 63.2vh;
 
     display: flex;
     align-items: center;
@@ -52,19 +52,20 @@
     padding: 0 20px;
     border-radius: 10px;
 
-    background: linear-gradient(to top, rgb(0, 0, 0), rgb(8, 131, 8));
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(46, 46, 12, 0.934));
 
     box-shadow: 2px 4px 8px 1px black;
 }
 
 .pergunta h1 {
+    font-family: Salsa, sans-serif;
     color: black;
 }
 
 .pergunta div h1 {
 
     font-size: 18px;
-    font-family: Nunito, sans-serif;
+    font-family: Salsa, sans-serif;
     color: #fff;
     font-weight: 700;
     text-align: center;
@@ -113,20 +114,20 @@
     box-shadow: 2px 4px 8px 1px black;
 
     font-size: 16px;
-    font-family: Nunito, sans-serif;
+    font-family: Salsa, sans-serif;
     color: #235608;
     font-weight: 700;
     text-align: justify;
 }
 
 .opcoes ul li:hover {
-    scale: 1.06;
-    background-color: blue;
+    scale: 1.03;
+    background: linear-gradient(to right, rgb(38, 106, 56), rgb(8, 131, 8));
     color: #fff;
 }
 
 .opcoes div {
-    width: 95%;
+    width: 90%;
     height: 25%;
 
     display: flex;
@@ -138,15 +139,15 @@
 }
 
 .progresso-div {
-    width: 95%;
-    height: 25px;
+    width: 93% !important;
+    height: 17px !important;
 
     display: flex;
     align-items: flex-start !important;
     justify-content: flex-start !important;
 
-    background-color: rgb(71, 75, 75);
-    border-radius: 10px;
+    background-color: rgba(71, 75, 75, 0.387);
+    border-radius: 5px;
     gap: 5px;
 
 }
@@ -167,7 +168,7 @@
 
     border-radius: 10px;
 
-    background: linear-gradient(to top, rgb(33, 116, 35), rgb(27, 225, 27));
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(46, 46, 12, 0.934));
 
     box-shadow: 2px 4px 8px 1px black;
 
@@ -203,8 +204,8 @@
     border-radius: 15px;
 
 
-    background-color: black;
-    /* background: linear-gradient(to top, rgba(0, 0, 0, 0.57), rgba(46, 46, 12, 0.507)); */
+    /* background-color: black; */
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(46, 46, 12, 0.934));
     box-shadow: 2px 4px 4px 1px black;
 
     color: #f6b60d;
@@ -270,5 +271,66 @@
     font-size: 30px !important;
     font-family: Salsa, sans-seri !important;
     font-weight: 600;
+
+}
+
+@media screen and (min-width: 720px) {
+    .quiz {
+        width: 100%;
+        height: 65.03vh;
+    }
+
+    .tela-inicial-quiz div {
+        width: 450px;
+        height: 60%;
+    }
+
+    .tela-inicial-quiz div button {
+        width: 150px;
+        height: 45px;
+    }
+
+    .tela-inicial-quiz div h1 {
+        font-size: 46px;
+    }
+
+    .tela-inicial-quiz div h2 {
+        font-size: 32px;
+    }
+
+    .quiz-div1 {
+        width: 40%;
+        height: 95%;
+    }
+
+    .pergunta div h1 {
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+
+    .opcoes {
+        width: 100%;
+        height: 70%;
+    }
+
+    .opcoes ul {
+        width: 90%;
+        height: 100%;
+
+        gap: 15px;
+        border-radius: 15px;
+
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+
+        background-color: lightgray;
+    }
+
+    .opcoes ul li {
+        width: 95%;
+        height: 40px;
+
+        font-size: 20px;
+    }
 
 }

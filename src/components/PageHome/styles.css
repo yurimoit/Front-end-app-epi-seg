@@ -63,6 +63,10 @@
     align-items: center;
     justify-content: flex-start;
 
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+
     border: 1px solid rgba(38, 34, 34, 0.867);
     border-radius: 8px;
 
@@ -74,6 +78,10 @@
     font-size: 14px;
     color: black;
     font-family: Nunito, sans-serif;
+    font-weight: 600;
+
+    color: gray;
+    font-size: 16px;
     font-weight: 600;
 
     padding-left: 5px;
@@ -165,6 +173,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
+    overflow-y: scroll;
     gap: 2px;
 
     border-radius: 0 0 5px 5px;
@@ -175,6 +184,10 @@
     border-top: 0px;
     padding: 0 3px;
 
+}
+
+.page-home-lista::-webkit-scrollbar {
+    display: none;
 }
 
 .page-home-lista-div {
@@ -334,4 +347,114 @@
     font-family: Salsa, sans-serif;
     font-weight: 600px;
     color: #fff;
+}
+
+@media screen and (min-width: 720px) {
+    .page-home-main {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.298), rgba(238, 238, 234, 0.241));
+    }
+
+    .page-home-input {
+        width: 550px;
+        height: 60px;
+    }
+
+    .page-home-input input {
+        width: 100%;
+        height: 50px;
+    }
+
+    .page-home-nav h1 {
+        color: black;
+        font-size: 36px;
+    }
+
+    .section-lista {
+        width: 70%;
+        height: 70%;
+        border: none;
+        border-radius: 25px;
+    }
+
+    .page-home-lista-title {
+        width: 100%;
+        height: 20%;
+
+        border-radius: 25px 25px 0 0;
+        padding: 0px 20px;
+
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.712), rgba(46, 46, 12, 0.684));
+    }
+
+    .page-home-lista-title ul {
+        width: 100%;
+        height: 30%;
+
+        gap: 4px;
+    }
+
+    .page-home-lista {
+        width: 100%;
+        height: 80%;
+
+        border-radius: 0 0 25px 25px;
+
+        padding: 0px 20px;
+
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.712), rgba(46, 46, 12, 0.684));
+    }
+
+
+    .page-home-lista-div {
+        width: 100%;
+        height: 45px;
+
+        gap: 8px;
+    }
+
+    .page-home-lista-div ul {
+        width: 89%;
+        height: 100%;
+
+        gap: 8px;
+    }
+
+    .li-lista-left-title {
+        width: 7%;
+        height: 100%;
+    }
+
+    .li-lista-left {
+        width: 8%;
+        height: 100%;
+
+        font-size: 22px;
+    }
+
+    .li-lista-rigth-title {
+        width: 80%;
+        height: 100%;
+    }
+
+    .li-lista-rigth {
+        width: 92%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        font-size: 22px;
+    }
+
+    .li-lista-rigth-opcoes {
+        width: 8%;
+        height: 100%;
+    }
+
+    .li-lista-button {
+        width: 8%;
+        height: 100%;
+
+    }
 }

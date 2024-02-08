@@ -7,6 +7,9 @@ import { IMaskInput } from "react-imask";
 import toast from 'react-hot-toast';
 import api from "../../services/api";
 import clienteDark from '../../assets/clienteDark.svg';
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated'
+// import { MultiSelect } from 'primereact/multiselect';
 
 
 export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCadastro, setFinalizarCDCliente }) {
@@ -23,19 +26,20 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
         cpf: '',
         telefone: '',
     })
-    const [formCategoria, setFormCategoria] = useState({
-        categorias: [], // Inicialize conforme necessário
-    });
+    const [formCategoria, setFormCategoria] = useState([]);
 
-    const handleOnChange = (e) => {
-        const selectedOptions = Array.from(e.target.selectedOptions, (option) => option.value);
 
-        setFormCategoria({
-            ...formCategoria,
-            categorias: selectedOptions,
-        });
-    };
-
+    const animatedComponents = makeAnimated()
+    const cities = [
+        { value: "Capacete", label: "Capacete" },
+        { value: "Luva", label: "Luva" },
+        { value: "Protetor Auricular", label: "Protetor Auricular" },
+        { value: "Bota", label: "Bota" },
+        { value: "Cinto de segurança", label: "Cinto de segurança" },
+        { value: "Óculos", label: "Óculos" },
+        { value: "Máscara", label: "Máscara" },
+        { value: "Outros", label: "Outros" } // Corrigido para "Foi"
+    ];
 
 
 
@@ -67,7 +71,7 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
                 return;
             }
 
-            if (formCategoria.categorias.length < 1) {
+            if (formCategoria.length < 1) {
                 document.getElementById('categoria').style.border = '1.5px solid red'
                 setErrorCategoria('Escolha uma opção de Categoria corretamente!');
                 return;
@@ -101,7 +105,9 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
                 cargo: form.cargo,
                 cpf: form.cpf.replace(/[^0-9]/g, ''),
                 telefone: form.telefone.replace(/[^0-9]/g, ''),
-                categoria: formCategoria.categorias
+                categoria: formCategoria.map((item) => {
+                    return item.value
+                })
             }, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -129,7 +135,7 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
         }
     }
 
-    console.log(formCategoria.categorias);
+    console.log();
 
     return (
         <div>
@@ -207,23 +213,19 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
                                 <span style={{ marginBottom: '10px' }}>{errorTelefone}</span>
 
                                 <label className='titulo-label'>Categorias de EPI:</label>
-                                <select
-                                    id='categoria'
-                                    className='b-categorias-cadastra-funcionario'
-                                    name="categorias"
-                                    value={formCategoria.categorias}
-                                    onChange={(e) => handleOnChange(e)}
-                                    multiple
-                                >
-                                    <option value="Capacete">Capacete</option>
-                                    <option value="Luva">Luva</option>
-                                    <option value="Protetor Auricular">Protetor Auricular</option>
-                                    <option value="Bota">Bota</option>
-                                    <option value="Cinto de segurança">Cinto de segurança</option>
-                                    <option value="Óculos">Óculos</option>
-                                    <option value="Máscara">Máscara</option>
-                                </select>
-
+                                <Select
+                                    components={animatedComponents}
+                                    className="select"
+                                    isMulti
+                                    options={cities}
+                                    onChange={(e) => setFormCategoria(e)}
+                                    isClearable={true}
+                                    isSearchable={true}
+                                    isDisabled={false}
+                                    isLoading={true}
+                                    isRtl={false}
+                                    closeMenuOnSelect={false}
+                                />
                                 <span >{errorCategoria}</span>
 
                             </section>

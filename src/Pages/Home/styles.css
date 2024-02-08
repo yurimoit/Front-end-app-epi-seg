@@ -79,6 +79,8 @@ main {
     align-items: center;
     justify-content: space-between;
 
+    background-color: rgba(0, 0, 0, 0.637);
+
 }
 
 .nav-pages button {
@@ -101,4 +103,34 @@ main {
 .nav-pages button:hover {
     background-color: lightgray;
     color: black;
+}
+
+@media screen and (min-width: 720px) {
+    .main-header {
+        width: 100%;
+        height: 24.77vh !important;
+    }
+
+    .nav-pages {
+        width: 100%;
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-pages button {
+        width: 16%;
+        height: 100%;
+
+        font-size: 22px;
+    }
+
+    .main-header h1 {
+
+        font-size: 36px;
+        font-family: Salsa, sans-serif;
+        text-transform: uppercase;
+    }
 }

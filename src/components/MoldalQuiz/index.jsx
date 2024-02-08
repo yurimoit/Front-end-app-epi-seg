@@ -173,16 +173,6 @@ export default function ModalQuiz() {
 
     }
 
-    console.log("primeira:");
-    console.log(primeira);
-    console.log("Segunda:");
-    console.log(segunda);
-    console.log("Terceira:");
-    console.log(terceira);
-    console.log("Quarta:");
-    console.log(quarta);
-    console.log("Contador:");
-    console.log(contador);
 
     useEffect(() => {
         setPrimeira(primeira)

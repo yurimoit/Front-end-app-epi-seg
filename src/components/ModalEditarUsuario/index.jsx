@@ -164,8 +164,8 @@ export default function ModalEditarUsuario({ abrirModalEditarUsuario, setAbrirMo
                 className="modal-editar"
             >
                 <div className="borda-usuario-editar" >
-                    <div className="modal-content-cliente-cc">
-                        <div className="titulo-funcionario">
+                    <div className="modal-content-usuario-editar">
+                        <div className="titulo-usuario-editar">
                             <section>
                                 <img src={clienteDark} alt='cliente-dark' />
                                 <h1>Editar cadastro</h1>
@@ -207,7 +207,7 @@ export default function ModalEditarUsuario({ abrirModalEditarUsuario, setAbrirMo
 
                                 <label>CPF*</label>
                                 <IMaskInput
-                                    id="cpf"
+                                    id="cpf-usuario-editar"
                                     mask="000.000.000-00"
                                     placeholder="Digite o seu CPF"
                                     name="cpf"
@@ -220,7 +220,7 @@ export default function ModalEditarUsuario({ abrirModalEditarUsuario, setAbrirMo
 
                                 <label>Telefone*</label>
                                 <IMaskInput
-                                    id="telefone"
+                                    id="telefone-usuario-editar"
                                     mask="(00) 00000-0000"
                                     placeholder="Digite o seu telefone"
                                     name="telefone"

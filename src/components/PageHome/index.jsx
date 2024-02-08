@@ -121,18 +121,6 @@ export default function PageHome({ statusButtonMW, setStatusButtonMW, statusConn
                         </ul>
                     </div>
                     <div className='page-home-lista'>
-                        {/* <div >
-                            <ul >
-                                <li onClick={() => setAbrirModalDetalhar(true)} className='li-lista-left'>9077</li>
-                                <li className='li-lista-rigth'>Yuri</li>
-                            </ul>
-                            <button onClick={() => setAbrirModalEditar(true)} className='li-lista-button'>
-                                <EditIcon sx={{ color: 'rgb(32, 208, 32)', width: '80%', height: '80%' }} />
-                            </button>
-                            <button onClick={() => setAbrirModalExcluir(true)} className='li-lista-button'>
-                                <DeleteForeverIcon sx={{ color: 'red', width: '80%', height: '80%' }} />
-                            </button>
-                        </div> */}
                         {lista.map((item, index) => (
                             <div className='page-home-lista-div' key={index}>
                                 <ul >

@@ -34,7 +34,7 @@ export default function ModalDetalhar({ abrirModalDetalhar, setAbrirModalDetalha
         // eslint-disable-next-line 
         [index])
 
-
+    console.log(form.categoria);
 
     return (
         <div>
@@ -44,15 +44,15 @@ export default function ModalDetalhar({ abrirModalDetalhar, setAbrirModalDetalha
                 aria-describedby="modal-modal-description"
                 className="modal-editar"
             >
-                <div className="borda-cliente-cc" >
+                <div className="borda-detalhar-informacoes-fiuncionario" >
                     <div className="modal-funcionario-detalhar">
                         <div className="titulo-funcionario-detalhar">
                             <section>
-                                < PeopleIcon sx={{ width: '30px', height: '40px', color: '#fff' }} />
+                                < PeopleIcon sx={{ width: '30px', height: '45px', color: 'black' }} />
                                 <h1>Informações de cadastro</h1>
                             </section>
                             <button type="button" onClick={() => setAbrirModalDetalhar(false)}>
-                                <CloseIcon sx={{ width: '100%', height: '100%', color: '#fff' }} />
+                                <CloseIcon sx={{ width: '100%', height: '100%', color: 'black' }} />
                             </button>
                         </div>
 
