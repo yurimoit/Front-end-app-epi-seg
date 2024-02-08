@@ -220,7 +220,7 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
                                     options={cities}
                                     onChange={(e) => setFormCategoria(e)}
                                     isClearable={true}
-                                    isSearchable={true}
+                                    isSearchable={false}
                                     isDisabled={false}
                                     isLoading={true}
                                     isRtl={false}
