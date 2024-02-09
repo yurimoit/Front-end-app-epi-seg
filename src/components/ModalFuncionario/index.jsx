@@ -215,18 +215,30 @@ export default function ModalFuncionarios({ abrirModalCadastro, setAbrirModalCad
                                 <label className='titulo-label'>Categorias de EPI:</label>
                                 <Select
                                     components={animatedComponents}
-                                    className="select"
+                                    id="select-cadastro-funcionario"
                                     isMulti
                                     options={cities}
                                     onChange={(e) => setFormCategoria(e)}
                                     isClearable={true}
                                     isSearchable={false}
                                     isDisabled={false}
-                                    isLoading={true}
+                                    isLoading={false}
                                     isRtl={false}
                                     closeMenuOnSelect={false}
+                                    styles={{
+                                        menu: base => ({
+                                            ...base,
+                                            maxHeight: '100px', // Define a altura máxima do menu
+                                            overflowY: 'auto', // Adiciona uma barra de rolagem vertical
+                                        }),
+                                        valueContainer: base => ({
+                                            ...base,
+                                            flexWrap: 'nowrap',
+                                            overflowX: 'auto',
+                                        }),
+                                    }}
                                 />
-                                <span >{errorCategoria}</span>
+                                <span style={{ marginBottom: '10px' }}>{errorCategoria}</span>
 
                             </section>
 

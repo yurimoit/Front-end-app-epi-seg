@@ -207,7 +207,8 @@ export default function ModalEditar({ abrirModalEditar, setAbrirModalEditar, lis
                                     onChange={(e) => handleOnchage(e)}
 
                                 />
-                                <span > {errorCargo}</span>
+                                <span style={{ marginBottom: '10px' }}> {errorCargo}</span>
+
                             </section>
 
 
@@ -215,7 +216,7 @@ export default function ModalEditar({ abrirModalEditar, setAbrirModalEditar, lis
 
                                 <label>CPF*</label>
                                 <IMaskInput
-                                    id="cpf"
+                                    id="cpf-editar-cadastro-funcionario"
                                     mask="000.000.000-00"
                                     placeholder="Digite o seu CPF"
                                     name="cpf"
@@ -223,12 +224,12 @@ export default function ModalEditar({ abrirModalEditar, setAbrirModalEditar, lis
                                     onChange={(e) => handleOnchage(e)}
 
                                 />
-                                <span style={{ marginBottom: '10px' }}> {errorCPF}</span>
+                                <span style={{ marginBottom: '20px' }}> {errorCPF}</span>
 
 
                                 <label>Telefone*</label>
                                 <IMaskInput
-                                    id="telefone"
+                                    id="telefone-editar-cadastro-funcionario"
                                     mask="(00) 00000-0000"
                                     placeholder="Digite o seu telefone"
                                     name="telefone"
@@ -241,19 +242,30 @@ export default function ModalEditar({ abrirModalEditar, setAbrirModalEditar, lis
                                 <label className='titulo-label'>Categorias de EPI:</label>
                                 <Select
                                     components={animatedComponents}
-                                    className="select"
+                                    id="select-editar-cadastro-funcionario"
                                     isMulti
                                     options={cities}
                                     onChange={(e) => setFormCategoria(e)}
                                     isClearable={true}
                                     isSearchable={false}
                                     isDisabled={false}
-                                    isLoading={true}
+                                    isLoading={false}
                                     isRtl={false}
                                     closeMenuOnSelect={false}
+                                    styles={{
+                                        menu: base => ({
+                                            ...base,
+                                            maxHeight: '100px', // Define a altura máxima do menu
+                                            overflowY: 'auto', // Adiciona uma barra de rolagem vertical
+                                        }),
+                                        valueContainer: base => ({
+                                            ...base,
+                                            flexWrap: 'nowrap',
+                                            overflowX: 'auto',
+                                        }),
+                                    }}
                                 />
-                                <span >{errorCategoria}</span>
-
+                                <span style={{ marginBottom: '10px' }}>{errorCategoria}</span>
                             </section>
 
 
@@ -261,7 +273,7 @@ export default function ModalEditar({ abrirModalEditar, setAbrirModalEditar, lis
                                 <button type='button1' onClick={() => setAbrirModalEditar(false)} className="btn-cancelar">
                                     Cancelar
                                 </button>
-                                <button type="submit" className="btn-aplicar">
+                                <button type="submit" className="btn-aplicar-editar-cadastro-funcionario">
                                     Salvar alterações
                                 </button>
                             </section>
