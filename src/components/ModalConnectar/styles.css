@@ -183,7 +183,7 @@
 
 .button-confirm {
     width: 42%;
-    height: 50px;
+    height: 50px !important;
 
     display: flex;
     align-items: center;
