@@ -215,6 +215,15 @@ export default function ModalQuiz() {
         // eslint-disable-next-line 
         [iniciaPegunta, tempo, finalizaPergunta])
 
+    console.log("Primeira:");
+    console.log(primeira);
+    console.log("Segunda:");
+    console.log(segunda);
+    console.log("Terceira:");
+    console.log(terceira);
+    console.log("Quarta:");
+    console.log(quarta);
+
     return (
         <div className='quiz'>
             {iniciaPegunta ? (
