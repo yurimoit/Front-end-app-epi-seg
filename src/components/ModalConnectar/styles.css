@@ -278,6 +278,8 @@
     }
 
     .connect-form {
+        width: 100%;
+        height: 95%;
 
         padding-top: 50px;
     }
