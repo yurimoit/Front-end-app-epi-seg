@@ -266,7 +266,8 @@
 
 @media screen and (min-width: 1420px) {
     .connect {
-        height: 65.3vh;
+        /* height: 65.3vh; */
+        height: 100%;
         padding-top: 40px;
     }
 
