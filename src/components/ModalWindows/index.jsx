@@ -107,7 +107,7 @@ export default function ModalWindows({ setStatusButtonMW, setStatusConnect, setS
                 </nav>
                 <footer className='windows-footer'>
                     <div onClick={() => pageRegistro()}>
-                        <h1>{localStorage.getItem('token') ? sigla : 'YM'}</h1>
+                        <h1>{localStorage.getItem('token') ? sigla : 'JS'}</h1>
                     </div>
                     <button onClick={() => homeLogin()}>
                         <h1>{!localStorage.getItem('token') ? 'Entra' : 'Logout'}</h1>

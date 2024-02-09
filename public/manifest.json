@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "EPI-SEG",
   "name": "EPI_SEG",
   "icons": [
     {
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logoEpi.png",
+      "src": "logoEpi.jpg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logoEpi.png",
+      "src": "logoEpi.jpg",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -21,6 +21,6 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "black",
+  "background_color": "#ffff",
   "border_radius": "50%"
 }
