@@ -151,11 +151,11 @@
     }
 
     .card-texto h1 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .card-texto p {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 }
 
