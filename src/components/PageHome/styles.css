@@ -365,9 +365,12 @@
         height: 50px;
     }
 
+
     .page-home-nav h1 {
         color: black;
-        font-size: 36px;
+        font-size: 34px;
+
+        margin-top: 15px;
     }
 
     .section-lista {
