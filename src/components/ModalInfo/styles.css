@@ -151,7 +151,7 @@
     }
 
     .card-texto h1 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .card-texto p {
@@ -159,7 +159,7 @@
     }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1400px) {
     .info-card-div {
         width: 22vw;
         height: 52vh;
