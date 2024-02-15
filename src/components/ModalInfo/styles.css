@@ -155,6 +155,22 @@
     }
 
     .card-texto p {
-        font-size: 14px;
+        font-size: 7rem;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .info-card-div {
+        width: 22vw;
+        height: 52vh;
+
+    }
+
+    .card-texto h1 {
+        font-size: 1.2rem;
+    }
+
+    .card-texto p {
+        font-size: 1rem;
     }
 }
